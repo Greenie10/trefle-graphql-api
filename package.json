@@ -1,0 +1,28 @@
+{
+  "name": "trefle-graphql-api",
+  "version": "1.0.0",
+  "description": "This is a graphql based API that resolves using a REST API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node --presets babel-preset-env -- src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Greenie10/trefle-graphql-api.git"
+  },
+  "author": "Laura Green",
+  "license": "ISC",
+  "homepage": "https://github.com/Greenie10/trefle-graphql-api#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-graphql": "^0.6.12",
+    "graphql": "^0.13.2",
+    "node-fetch": "^2.1.2",
+    "babel-preset-env": "^1.7.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}
