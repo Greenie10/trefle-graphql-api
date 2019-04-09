@@ -2,75 +2,64 @@ import {
   GraphQLObjectType,
   GraphQLString,
   GraphQLList,
-  GraphQLSchema
+  GraphQLInt,
+  GraphQLSchema,
 } from 'graphql';
 
 import fetch from 'node-fetch';
 
-import { BASE_URL } from './constants';
+import {BASE_URL, TOKEN} from './constants';
 
-const PersonType = new GraphQLObjectType({
-  name: 'Person',
-  description: 'A star wars Character',
+const PlantType = new GraphQLObjectType({
+  name: 'Plants',
+  description: 'All about plants',
   fields: () => ({
-    name: {
+    slug: {
       type: GraphQLString,
-      description: 'A character\'s  name',
-      resolve: (person) => person.name
+      description: 'Machine readable plant name',
+      resolve: plants => plants.slug,
     },
-    gender: {
+    scientific_name: {
       type: GraphQLString,
-      description: 'A star wars gender',
-      resolve: (person) => person.gender
+      resolve: plants => plants.scientific_name,
     },
-    vehicles: {
-      type: new GraphQLList(GraphQLString),
-      description: 'A list<Array> of vehicles owned by a character',
-      resolve: (person) => person.vehicles
+    link: {
+      type: GraphQLString,
+      resolve: plants => plants.link,
     },
-    films: {
-      type: GraphQLList(GraphQLString),
-      description: 'A list<Array> of films that a character has featured in',
-      resolve: (person) => person.films 
+    common_name: {
+      type: GraphQLString,
+      resolve: plants => plants.common_name,
     },
-    species: {
-      type: GraphQLList(GraphQLString),
-      description: 'The species of a character',
-      resolve: (person) => person.species 
-    },
-    starships: { 
-      type: GraphQLList(GraphQLString),
-      description: 'A list<Array> of starchips owned by a character',
-      resolve: (person) => person.starships 
-    }
-  })
+  }),
 });
 
 const QueryType = new GraphQLObjectType({
-  name: 'Query',
+  name: 'Root_Query',
   description: 'Root query of all',
   fields: () => ({
-    People: {
-      type: new GraphQLList(PersonType),
-      description: 'All Star Wars Characters',
-      resolve: (root, args) => fetch(`${BASE_URL}/people`)
-        .then(response => response.json())
-        .then(data => data.results)
-    },
-    Person: {
-      type: PersonType,
-      args: {
-        id: { 
-          type: GraphQLString
-        }
-      },
-      resolve: (root, args) => fetch(`${BASE_URL}/people/${args.id}`)
+    Plants: {
+      type: new GraphQLList(PlantType),
+      description: 'All plants',
+      resolve: (root, args) =>
+        fetch(`${BASE_URL}/plants/?token=${TOKEN}&page_size=100`)
           .then(response => response.json())
-          .then(data => data)
-      }
-  })
-})
+          .then(data => data),
+    },
+    Plant: {
+      type: PlantType,
+      description: 'One plant',
+      args: {
+        id: {type: GraphQLInt},
+      },
+      resolve: (root, args) =>
+        fetch(`${BASE_URL}plants/${args.id}?token=${TOKEN}`)
+          .then(response => response.json())
+          .then(data => data),
+    },
+  }),
+});
 
 export default new GraphQLSchema({
-  query: QueryType
+  query: QueryType,
 });
