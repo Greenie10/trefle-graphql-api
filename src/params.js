@@ -1,0 +1,405 @@
+export const PARAMS = [
+  {param: 'common_name', type: 'string', description: 'Common name'},
+  {
+    param: 'family_common_name',
+    type: 'string',
+    description: 'Filter by family_common_name',
+  },
+  {
+    param: 'scientific_name',
+    type: 'string',
+    description: 'Filter by scientific_name',
+  },
+  {param: 'usda_name', type: 'string', description: 'Filter by usda_name'},
+  {
+    param: 'fruit_conspicuous',
+    type: 'boolean',
+    description: 'Filter by fruit_conspicuous',
+  },
+  {
+    param: 'coppice_potential',
+    type: 'boolean',
+    description: 'Filter by coppice_potential',
+  },
+  {
+    param: 'fruit_seed_period_end',
+    type: 'string',
+    description: 'Filter by fruit_seed_period_end',
+  },
+  {
+    param: 'resprout_ability',
+    type: 'boolean',
+    description: 'Filter by resprout_ability',
+  },
+  {
+    param: 'propagated_by_sprigs',
+    type: 'boolean',
+    description: 'Filter by propagated_by_sprigs',
+  },
+  {
+    param: 'propagated_by_cuttings',
+    type: 'boolean',
+    description: 'Filter by propagated_by_cuttings',
+  },
+  {
+    param: 'fodder_product',
+    type: 'boolean',
+    description: 'Filter by fodder_product',
+  },
+  {
+    param: 'precipitation_minimum',
+    type: 'float',
+    description: 'Filter by precipitation_minimum',
+  },
+  {param: 'toxicity', type: 'string', description: 'Filter by toxicity'},
+  {
+    param: 'foliage_texture',
+    type: 'string',
+    description: 'Filter by foliage_texture',
+  },
+  {
+    param: 'fruit_seed_abundance',
+    type: 'string',
+    description: 'Filter by fruit_seed_abundance',
+  },
+  {
+    param: 'fire_resistance',
+    type: 'boolean',
+    description: 'Filter by fire_resistance',
+  },
+  {
+    param: 'height_at_base_age_max_ft',
+    type: 'float',
+    description: 'Filter by height_at_base_age_max_ft',
+  },
+  {
+    param: 'fall_conspicuous',
+    type: 'boolean',
+    description: 'Filter by fall_conspicuous',
+  },
+  {
+    param: 'fire_tolerance',
+    type: 'string',
+    description: 'Filter by fire_tolerance',
+  },
+  {param: 'ph_minimum', type: 'float', description: 'Filter by ph_minimum'},
+  {
+    param: 'propagated_by_container',
+    type: 'boolean',
+    description: 'Filter by propagated_by_container',
+  },
+  {
+    param: 'flower_conspicuous',
+    type: 'boolean',
+    description: 'Filter by flower_conspicuous',
+  },
+  {
+    param: 'native_status',
+    type: 'string',
+    description: 'Filter by native_status',
+  },
+  {
+    param: 'fuelwood_product',
+    type: 'string',
+    description: 'Filter by fuelwood_product',
+  },
+  {
+    param: 'frost_free_days_minimum',
+    type: 'float',
+    description: 'Filter by frost_free_days_minimum',
+  },
+  {
+    param: 'growth_habit',
+    type: 'string',
+    description: 'Filter by growth_habit',
+  },
+  {
+    param: 'protein_potential',
+    type: 'string',
+    description: 'Filter by protein_potential',
+  },
+  {
+    param: 'planting_density_per_acre_maximum',
+    type: 'float',
+    description: 'Filter by planting_density_per_acre_maximum',
+  },
+  {
+    param: 'root_depth_minimum_inches',
+    type: 'float',
+    description: 'Filter by root_depth_minimum_inches',
+  },
+  {
+    param: 'adapted_to_medium_textured_soils',
+    type: 'boolean',
+    description: 'Filter by adapted_to_medium_textured_soils',
+  },
+  {param: 'growth_form', type: 'string', description: 'Filter by growth_form'},
+  {
+    param: 'after_harvest_regrowth_rate',
+    type: 'string',
+    description: 'Filter by after_harvest_regrowth_rate',
+  },
+  {
+    param: 'drought_tolerance',
+    type: 'string',
+    description: 'Filter by drought_tolerance',
+  },
+  {
+    param: 'salinity_tolerance',
+    type: 'string',
+    description: 'Filter by salinity_tolerance',
+  },
+  {
+    param: 'fertility_requirement',
+    type: 'string',
+    description: 'Filter by fertility_requirement',
+  },
+  {
+    param: 'foliage_color',
+    type: 'string',
+    description: 'Filter by foliage_color',
+  },
+  {
+    param: 'nitrogen_fixation',
+    type: 'string',
+    description: 'Filter by nitrogen_fixation',
+  },
+  {
+    param: 'commercial_availability',
+    type: 'string',
+    description: 'Filter by commercial_availability',
+  },
+  {
+    param: 'anaerobic_tolerance',
+    type: 'string',
+    description: 'Filter by anaerobic_tolerance',
+  },
+  {param: 'lifespan', type: 'string', description: 'Filter by lifespan'},
+  {
+    param: 'veneer_product',
+    type: 'boolean',
+    description: 'Filter by veneer_product',
+  },
+  {param: 'bloat', type: 'string', description: 'Filter by bloat'},
+  {
+    param: 'precipitation_maximum',
+    type: 'float',
+    description: 'Filter by precipitation_maximum',
+  },
+  {
+    param: 'planting_density_per_acre_minimum',
+    type: 'float',
+    description: 'Filter by planting_density_per_acre_minimum',
+  },
+  {
+    param: 'foliage_porosity_winter',
+    type: 'string',
+    description: 'Filter by foliage_porosity_winter',
+  },
+  {
+    param: 'height_mature_ft',
+    type: 'float',
+    description: 'Filter by height_mature_ft',
+  },
+  {param: 'ph_maximum', type: 'float', description: 'Filter by ph_maximum'},
+  {
+    param: 'christmas_tree_product',
+    type: 'boolean',
+    description: 'Filter by christmas_tree_product',
+  },
+  {
+    param: 'shape_and_orientation',
+    type: 'string',
+    description: 'Filter by shape_and_orientation',
+  },
+  {
+    param: 'shade_tolerance',
+    type: 'string',
+    description: 'Filter by shade_tolerance',
+  },
+  {
+    param: 'usda_synonym',
+    type: 'string',
+    description: 'Filter by usda_synonym',
+  },
+  {
+    param: 'pulpwood_product',
+    type: 'boolean',
+    description: 'Filter by pulpwood_product',
+  },
+  {param: 'small_grain', type: 'boolean', description: 'Filter by small_grain'},
+  {
+    param: 'low_growing_grass',
+    type: 'boolean',
+    description: 'Filter by low_growing_grass',
+  },
+  {
+    param: 'berry_nut_seed_product',
+    type: 'boolean',
+    description: 'Filter by berry_nut_seed_product',
+  },
+  {
+    param: 'vegetative_spread_rate',
+    type: 'string',
+    description: 'Filter by vegetative_spread_rate',
+  },
+  {
+    param: 'propagated_by_bare_root',
+    type: 'boolean',
+    description: 'Filter by propagated_by_bare_root',
+  },
+  {
+    param: 'propagated_by_sod',
+    type: 'boolean',
+    description: 'Filter by propagated_by_sod',
+  },
+  {
+    param: 'fruit_seed_period_begin',
+    type: 'string',
+    description: 'Filter by fruit_seed_period_begin',
+  },
+  {
+    param: 'palatable_browse_animal',
+    type: 'string',
+    description: 'Filter by palatable_browse_animal',
+  },
+  {
+    param: 'foliage_porosity_summer',
+    type: 'string',
+    description: 'Filter by foliage_porosity_summer',
+  },
+  {
+    param: 'seeds_per_pound',
+    type: 'float',
+    description: 'Filter by seeds_per_pound',
+  },
+  {
+    param: 'adapted_to_fine_textured_soils',
+    type: 'boolean',
+    description: 'Filter by adapted_to_fine_textured_soils',
+  },
+  {
+    param: 'hedge_tolerance',
+    type: 'string',
+    description: 'Filter by hedge_tolerance',
+  },
+  {
+    param: 'post_product',
+    type: 'boolean',
+    description: 'Filter by post_product',
+  },
+  {param: 'growth_rate', type: 'string', description: 'Filter by growth_rate'},
+  {
+    param: 'propagated_by_bulbs',
+    type: 'boolean',
+    description: 'Filter by propagated_by_bulbs',
+  },
+  {param: 'fruit_color', type: 'string', description: 'Filter by fruit_color'},
+  {
+    param: 'nursery_stock_product',
+    type: 'boolean',
+    description: 'Filter by nursery_stock_product',
+  },
+  {
+    param: 'seedling_vigor',
+    type: 'string',
+    description: 'Filter by seedling_vigor',
+  },
+  {
+    param: 'cold_stratification_required',
+    type: 'boolean',
+    description: 'Filter by cold_stratification_required',
+  },
+  {
+    param: 'palatable_graze_animal',
+    type: 'string',
+    description: 'Filter by palatable_graze_animal',
+  },
+  {
+    param: 'bloom_period',
+    type: 'string',
+    description: 'Filter by bloom_period',
+  },
+  {
+    param: 'fruit_seed_persistence',
+    type: 'boolean',
+    description: 'Filter by fruit_seed_persistence',
+  },
+  {
+    param: 'propagated_by_bulbs',
+    type: 'boolean',
+    description: 'Filter by propagated_by_bulbs',
+  },
+  {
+    param: 'active_growth_period',
+    type: 'string',
+    description: 'Filter by active_growth_period',
+  },
+  {param: 'c_n_ratio', type: 'string', description: 'Filter by c_n_ratio'},
+  {param: 'duration', type: 'string', description: 'Filter by duration'},
+  {
+    param: 'flower_color',
+    type: 'string',
+    description: 'Filter by flower_color',
+  },
+  {
+    param: 'leaf_retention',
+    type: 'boolean',
+    description: 'Filter by leaf_retention',
+  },
+  {
+    param: 'known_allelopath',
+    type: 'boolean',
+    description: 'Filter by known_allelopath',
+  },
+  {
+    param: 'palatable_human',
+    type: 'boolean',
+    description: 'Filter by palatable_human',
+  },
+  {
+    param: 'propagated_by_tubers',
+    type: 'boolean',
+    description: 'Filter by propagated_by_tubers',
+  },
+  {
+    param: 'moisture_use',
+    type: 'string',
+    description: 'Filter by moisture_use',
+  },
+  {
+    param: 'lumber_product',
+    type: 'boolean',
+    description: 'Filter by lumber_product',
+  },
+  {
+    param: 'adapted_to_coarse_textured_soils',
+    type: 'boolean',
+    description: 'Filter by adapted_to_coarse_textured_soils',
+  },
+  {
+    param: 'propagated_by_corms',
+    type: 'boolean',
+    description: 'Filter by propagated_by_corms',
+  },
+  {
+    param: 'temperature_minimum_deg_f',
+    type: 'float',
+    description: 'Filter by temperature_minimum_deg_f',
+  },
+  {
+    param: 'naval_store_product',
+    type: 'boolean',
+    description: 'Filter by naval_store_product',
+  },
+  {
+    param: 'seed_spread_rate',
+    type: 'string',
+    description: 'Filter by seed_spread_rate',
+  },
+  {
+    param: 'caco_3_tolerance',
+    type: 'string',
+    description: 'Filter by caco_3_tolerance',
+  },
+];

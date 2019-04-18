@@ -72,7 +72,30 @@ const PlantType = new GraphQLObjectType({
   }),
 });
 
+//new file
+class Species {
+  constructor(){
+    // this.params = params;
+    this.fetchUrl = 
+  }
+
+  fetchUrl(params){
+    return `${BASE_URL}species/${params}?token=${TOKEN}`
+  }
+
+  async getList(){
+    return await fetch(this.fetchUrl()).then(response => response.json()) // list of plants
+  }
+
+  getOne(id){
+return fetch(this.fetchUrl(id)).then(response => response.json())
+  }
+}
+// end new file
+
 const QueryType = new GraphQLObjectType({
+
+
   name: 'Root_Query',
   description: 'Root query of all',
   fields: () => ({
@@ -84,9 +107,12 @@ const QueryType = new GraphQLObjectType({
           'Plants',
           `${BASE_URL}/species/?token=${TOKEN}&page_size=10`,
         ) ||
+        new Species().getList()
         fetch(`${BASE_URL}/species/?token=${TOKEN}&page_size=5`)
           .then(response => response.json())
           .then(data => data),
+
+        
     },
     Plant: {
       type: PlantType,
@@ -96,6 +122,7 @@ const QueryType = new GraphQLObjectType({
       },
       resolve: (root, args) =>
         console.log('Plant', `${BASE_URL}species/${args.id}?token=${TOKEN}`) ||
+        new Species().getOne(args.id)
         fetch(`${BASE_URL}species/${args.id}?token=${TOKEN}`)
           .then(response => response.json())
           .then(data => data),
